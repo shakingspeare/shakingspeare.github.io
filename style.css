@@ -69,6 +69,14 @@ header.site a.name:hover span:nth-child(odd) { animation-delay: 0.05s; }
   transform-origin: bottom left;
 }
 
+header.site .shelf {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 4.5vw, 30px);
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-top: 2px;
+}
 header.site .tagline {
   margin: 6px 0 0;
   color: var(--muted);
