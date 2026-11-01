@@ -1,0 +1,23 @@
+title: Shakingspeare
+tagline: Stories, poems, and other things that shake loose.
+description: Stories and poems by a young writer from South Korea.
+url: https://shakingspeare.github.io
+baseurl: ""
+
+permalink: /:year/:title/
+timezone: Asia/Seoul
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - templates/

@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<article class="{{ page.kind | downcase }}">
+  <span class="tag {{ page.kind | downcase }}">{{ page.kind }}</span>
+  <h1>{{ page.title }}</h1>
+  <div class="byline">
+    by Shakingspeare{% if page.pictures %} · pictures {{ page.pictures }}{% endif %}
+    · {{ page.date | date: "%B %-d, %Y" }}
+  </div>
+
+  <div class="body">
+    {{ content }}
+  </div>
+
+  {% if page.notebook %}
+  <section class="notebook">
+    <h2>📓 From the notebook</h2>
+    <p class="note">The first draft, written by hand.</p>
+    <div class="pages">
+      {% for img in page.notebook %}
+      <a href="{{ img | relative_url }}" target="_blank"><img src="{{ img | relative_url }}" alt="Handwritten page {{ forloop.index }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="reactions">
+    <span class="views">👀 <span data-views>…</span></span>
+    <button class="like-btn" type="button"><span class="heart">❤️</span> Like <span class="count">…</span></button>
+  </div>
+</article>
+
+<a class="back" href="{{ '/' | relative_url }}">← All stories</a>

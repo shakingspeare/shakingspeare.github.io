@@ -1,0 +1,23 @@
+---
+layout: default
+home: true
+---
+<h2 class="section-title">📚 Latest stories</h2>
+
+<div class="cards">
+  {% for post in site.posts %}
+  <a class="card" href="{{ post.url | relative_url }}" data-slug="{{ post.counter }}">
+    {% if post.cover %}<img src="{{ post.cover | relative_url }}" alt="" loading="lazy">{% endif %}
+    <div class="inner">
+      <span class="tag {{ post.kind | downcase }}">{{ post.kind }}</span>
+      <h3>{{ post.title }}</h3>
+      <p class="excerpt">{{ post.excerpt_text }}</p>
+      <div class="stats">
+        <span>📅 {{ post.date | date: "%b %-d, %Y" }}</span>
+        <span>👀 <span data-views>…</span></span>
+        <span>❤️ <span data-likes>…</span></span>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>

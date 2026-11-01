@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt_text | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="name" href="{{ '/' | relative_url }}">{% assign letters = site.title | split: "" %}{% for l in letters %}<span>{{ l }}</span>{% endfor %}<span class="quill">🪶</span></a>
+      <p class="tagline">{{ site.tagline }}</p>
+      <nav>
+        <a href="{{ '/' | relative_url }}">📚 Stories</a>
+        <a href="{{ '/about/' | relative_url }}">✨ About</a>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="site">© {{ site.time | date: "%Y" }} Shakingspeare · written in South Korea 🇰🇷</footer>
+  </div>
+  <script src="{{ '/counter.js' | relative_url }}"></script>
+  {% if page.layout == "story" %}<script>setupStory("{{ page.counter }}");</script>{% endif %}
+  {% if page.home %}<script>setupCards();</script>{% endif %}
+</body>
+</html>
