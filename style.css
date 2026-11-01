@@ -1,4 +1,6 @@
+/* One light theme on every device, even when the phone is in dark mode. */
 :root {
+  color-scheme: light;
   --bg: #fff8ec;
   --card: #ffffff;
   --text: #2d2340;
@@ -11,16 +13,6 @@
   --line: #f0e4cf;
   --shadow: 0 6px 0 rgba(45, 35, 64, 0.08), 0 10px 30px rgba(45, 35, 64, 0.08);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1d1828;
-    --card: #2a2338;
-    --text: #f3ecff;
-    --muted: #b3a6c9;
-    --line: #3b3250;
-    --shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-}
 
 * { box-sizing: border-box; }
 
@@ -31,7 +23,6 @@ body {
     radial-gradient(circle at 92% 30%, rgba(31, 181, 168, 0.18) 0 120px, transparent 121px),
     radial-gradient(circle at 15% 85%, rgba(255, 92, 138, 0.15) 0 110px, transparent 111px),
     var(--bg);
-  background-attachment: fixed;
   color: var(--text);
   font-family: "Nunito", system-ui, sans-serif;
   font-size: 19px;
