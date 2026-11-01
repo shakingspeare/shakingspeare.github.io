@@ -46,7 +46,7 @@ header.site {
 header.site a.name {
   font-family: "Fredoka", "Nunito", sans-serif;
   font-weight: 700;
-  font-size: clamp(30px, 6.6vw, 50px);
+  font-size: clamp(40px, 9vw, 64px);
   line-height: 1.1;
   text-decoration: none;
   color: var(--text);
