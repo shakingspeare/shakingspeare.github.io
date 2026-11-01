@@ -21,3 +21,4 @@ feed:
 exclude:
   - README.md
   - templates/
+  - preview.command
