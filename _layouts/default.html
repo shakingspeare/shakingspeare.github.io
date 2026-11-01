@@ -16,6 +16,41 @@
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "name": "Shakingspeare",
+        "alternateName": ["Shakingspeare stories", "Shakingspeare writer"],
+        "url": "{{ site.url }}/",
+        "description": {{ site.description | jsonify }},
+        "inLanguage": "en",
+        "author": { "@id": "{{ site.url }}/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#author",
+        "name": "Shakingspeare",
+        "description": "A young writer from South Korea who writes stories and poems. Shakingspeare is a pen name, not a misspelling of Shakespeare.",
+        "url": "{{ site.url }}/about/",
+        "nationality": { "@type": "Country", "name": "South Korea" }
+      }{% if page.layout == "story" %},
+      {
+        "@type": "BlogPosting",
+        "headline": {{ page.title | jsonify }},
+        "description": {{ page.excerpt_text | jsonify }},
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "url": "{{ page.url | absolute_url }}",
+        {% if page.cover %}"image": "{{ page.cover | absolute_url }}",{% endif %}
+        "author": { "@id": "{{ site.url }}/#author" },
+        "isPartOf": { "@id": "{{ site.url }}/#website" }
+      }{% endif %}
+    ]
+  }
+  </script>
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
 </head>
