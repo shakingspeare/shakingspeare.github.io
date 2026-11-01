@@ -46,13 +46,14 @@ header.site {
 header.site a.name {
   font-family: "Fredoka", "Nunito", sans-serif;
   font-weight: 700;
-  font-size: clamp(40px, 9vw, 64px);
+  font-size: clamp(30px, 6.6vw, 50px);
   line-height: 1.1;
   text-decoration: none;
   color: var(--text);
   display: inline-block;
 }
 header.site a.name span { display: inline-block; transition: transform 0.2s; }
+header.site a.name span.sp { width: 0.28em; }
 header.site a.name span:nth-child(5n+1) { color: var(--purple); }
 header.site a.name span:nth-child(5n+2) { color: var(--orange); }
 header.site a.name span:nth-child(5n+3) { color: var(--teal); }
@@ -64,7 +65,7 @@ header.site a.name:hover span:nth-child(odd) { animation-delay: 0.05s; }
 .quill {
   display: inline-block;
   font-size: 0.8em;
-  margin-left: 6px;
+  margin-left: 8px;
   animation: wiggle 2.5s ease-in-out infinite;
   transform-origin: bottom left;
 }
