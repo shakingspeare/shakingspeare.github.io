@@ -28,6 +28,7 @@
         "url": "{{ site.url }}/",
         "description": {{ site.description | jsonify }},
         "inLanguage": "en",
+        "image": "{{ site.url }}/favicon-512.png",
         "author": { "@id": "{{ site.url }}/#author" }
       },
       {
@@ -52,7 +53,11 @@
   }
   </script>
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ '/favicon-48.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ '/favicon-96.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon-192.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
 </head>
 <body>
   <div class="wrap">

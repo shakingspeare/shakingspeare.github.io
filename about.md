@@ -15,4 +15,5 @@ I love writing more than almost anything. I write about all kinds of things, wha
 Thanks for reading! If you like a story, press the ❤️ button.
 
   </div>
+  <p class="byline" style="margin-top:28px;font-size:13px">Feather icon: <a href="https://github.com/jdecked/twemoji">Twemoji</a> (CC BY 4.0)</p>
 </article>
