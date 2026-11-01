@@ -10,7 +10,7 @@ permalink: /about/
 
 I'm a young writer from **South Korea** 🇰🇷 who dreams of becoming an author like **J.K. Rowling** one day.
 
-I write stories about dragons, brave kids, strange buildings, and anything else that pops into my head. Most of them start in my notebook first, so you'll find the handwritten pages at the bottom of each story.
+I love writing more than almost anything. I write about all kinds of things, whatever pops into my head. Most of my stories start in my notebook first, so you'll find the handwritten pages at the bottom of each one.
 
 Thanks for reading! If you like a story, press the ❤️ button.
 
