@@ -135,6 +135,14 @@ header.site nav a:hover { transform: translateY(-2px) rotate(-2deg); }
   object-fit: cover;
   display: block;
 }
+.card .emoji-cover {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 84px;
+  background: linear-gradient(135deg, #bfe9ff 0%, #7fd3e8 55%, #1fb5a8 100%);
+}
 .card .inner { padding: 16px 20px 18px; }
 .card h3 {
   font-family: "Fredoka", sans-serif;

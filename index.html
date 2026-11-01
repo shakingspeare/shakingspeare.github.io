@@ -7,7 +7,7 @@ home: true
 <div class="cards">
   {% for post in site.posts %}
   <a class="card" href="{{ post.url | relative_url }}" data-slug="{{ post.counter }}">
-    {% if post.cover %}<img src="{{ post.cover | relative_url }}" alt="" loading="lazy">{% endif %}
+    {% if post.cover %}<img src="{{ post.cover | relative_url }}" alt="" loading="lazy">{% elsif post.emoji %}<div class="emoji-cover">{{ post.emoji }}</div>{% endif %}
     <div class="inner">
       <span class="tag {{ post.kind | downcase }}">{{ post.kind }}</span>
       <h3>{{ post.title }}</h3>
