@@ -44,8 +44,8 @@ header.site {
   padding: 44px 0 18px;
 }
 header.site a.name {
-  font-family: "Fredoka", "Nunito", sans-serif;
-  font-weight: 700;
+  font-family: "Sniglet", "Fredoka", sans-serif;
+  font-weight: 400;
   font-size: clamp(40px, 9vw, 64px);
   line-height: 1.1;
   text-decoration: none;
@@ -303,4 +303,13 @@ footer.site {
   article { padding: 24px 18px 22px; border-radius: 20px; }
   article figure { margin: 22px -4px; }
   .notebook .pages { grid-template-columns: 1fr; }
+}
+
+/* Titles use the same light, rounded font as the site name */
+.section-title,
+.card h3,
+article h1,
+.notebook h2 {
+  font-family: "Sniglet", "Fredoka", sans-serif;
+  font-weight: 400;
 }
