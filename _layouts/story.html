@@ -3,15 +3,46 @@ layout: default
 ---
 <article class="{{ page.kind | downcase }}">
   <span class="tag {{ page.kind | downcase }}">{{ page.kind }}</span>
-  <h1>{{ page.title }}</h1>
+  {% assign parts = content | split: '<!--ko-->' %}
+  <h1 data-en="{{ page.title | escape }}"{% if page.title_ko %} data-ko="{{ page.title_ko | escape }}"{% endif %}>{{ page.title }}</h1>
   <div class="byline">
     by Shakingspeare{% if page.pictures %} · pictures {{ page.pictures }}{% endif %}
     · {{ page.date | date: "%B %-d, %Y" }}
   </div>
 
-  <div class="body">
-    {{ content }}
+  {% if parts[1] %}
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" class="on">English (original)</button>
+    <button type="button" data-set-lang="ko">한국어 (번역)</button>
   </div>
+  {% endif %}
+
+  <div class="body" data-lang="en">
+    {{ parts[0] }}
+  </div>
+  {% if parts[1] %}
+  <div class="body" data-lang="ko" lang="ko" hidden>
+    <p class="translation-note">🤖 이 한국어판은 Claude(AI)가 자동으로 번역한 것입니다. 작가가 쓴 원래 문체를 최대한 살려서 옮겼습니다. 원문은 영어이며, 위의 English 버튼을 누르면 볼 수 있습니다.</p>
+    {{ parts[1] }}
+  </div>
+  <script>
+  (function () {
+    var h1 = document.querySelector("article h1");
+    function setLang(l) {
+      document.querySelectorAll("article .body[data-lang]").forEach(function (d) { d.hidden = d.dataset.lang !== l; });
+      document.querySelectorAll("[data-set-lang]").forEach(function (b) { b.classList.toggle("on", b.dataset.setLang === l); });
+      if (h1 && h1.dataset[l]) h1.textContent = h1.dataset[l];
+      try { localStorage.setItem("lang", l); } catch (e) {}
+    }
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.addEventListener("click", function () { setLang(b.dataset.setLang); });
+    });
+    var q = new URLSearchParams(location.search).get("lang"), saved = null;
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    if (q === "ko" || (!q && saved === "ko")) setLang("ko");
+  })();
+  </script>
+  {% endif %}
 
   {% if page.notebook %}
   <section class="notebook">

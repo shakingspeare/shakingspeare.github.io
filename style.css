@@ -198,6 +198,26 @@ article .byline {
   color: var(--muted);
   font-size: 16px;
 }
+.lang-switch { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.lang-switch button {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+.lang-switch button.on { border-color: var(--purple); background: var(--purple); color: #fff; }
+.translation-note {
+  font-size: 15px;
+  color: var(--muted);
+  background: #f6f1ff;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
 article .body { margin-top: 26px; }
 article .body p { margin: 0 0 1.2em; }
 article.poem .body p { white-space: pre-line; }

@@ -14,6 +14,12 @@ https://shakingspeare.github.io
 
 The home page list, the story page, and the feed are made automatically.
 
+## Korean version
+
+Add `title_ko:` at the top, then put a line with only `<!--ko-->` after the English story and write the Korean below it
+(repeat the picture lines there too). The story page then shows an English / 한국어 switch and a note that the
+Korean was translated by Claude.
+
 ## Poems
 
 Use `kind: Poem`. Line breaks inside a stanza are kept, and an empty line starts a new stanza.
