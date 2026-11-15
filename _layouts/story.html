@@ -10,17 +10,17 @@ layout: default
     · {{ page.date | date: "%B %-d, %Y" }}
   </div>
 
-  <div class="reactions top">
-    <button class="like-btn" type="button"><span class="heart">❤️</span> Like <span class="count">…</span></button>
-    <span class="views">👀 <span data-views>…</span></span>
-  </div>
-
   {% if parts[1] %}
   <div class="lang-switch" role="group" aria-label="Language">
     <button type="button" data-set-lang="en" class="on">English (original)</button>
     <button type="button" data-set-lang="ko">한국어 (번역)</button>
   </div>
   {% endif %}
+
+  <div class="reactions top">
+    <button class="like-btn" type="button"><span class="heart">❤️</span> Like <span class="count">…</span></button>
+    <span class="views">👀 <span data-views>…</span></span>
+  </div>
 
   <div class="body" data-lang="en">
     {{ parts[0] }}
