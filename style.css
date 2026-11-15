@@ -288,17 +288,29 @@ article figure img {
 /* ---------- like + views bar ---------- */
 
 .reactions {
-  margin-top: 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 14px;
-  padding: 16px 20px;
-  background: var(--bg);
-  border-radius: 18px;
 }
-.reactions.bottom { margin-top: 34px; }
+.reactions.top { margin-top: 14px; }
+.reactions.top .like-btn {
+  font-size: 15px;
+  padding: 6px 14px;
+  box-shadow: 0 3px 0 #d93d6b;
+}
+.reactions.top .like-btn.liked { box-shadow: 0 3px 0 #a99bbf; }
+.reactions.bottom {
+  margin-top: 36px;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.reactions .ask {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
+}
 .views { color: var(--muted); font-size: 16px; }
 
 .like-btn {
