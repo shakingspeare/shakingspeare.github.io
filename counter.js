@@ -12,14 +12,26 @@ function store(key, value) {
   try { localStorage.setItem(key, value); } catch (e) {}
 }
 
+// The last number this browser saw, so a slow counter does not leave "…" on the page.
+function cached(key) {
+  const v = remember(`count-${key}`);
+  return v === null ? null : Number(v);
+}
+
+let lastFetchOk = false; // false when the number came from the saved copy
+
 async function fetchCount(action, key) {
+  lastFetchOk = false;
   try {
     const res = await fetch(`${COUNTER}/${action}/${NS}/${key}`);
-    if (!res.ok) return 0;
+    if (!res.ok) return cached(key);
     const data = await res.json();
-    return data.value || 0;
+    const value = data.value || 0;
+    store(`count-${key}`, String(value));
+    lastFetchOk = true;
+    return value;
   } catch (e) {
-    return null;
+    return cached(key);
   }
 }
 
@@ -34,11 +46,15 @@ async function setupStory(slug) {
   const btn = document.querySelector(".like-btn");
   const likesEl = btn && btn.querySelector(".count");
 
+  // Show the saved numbers right away; the fresh ones replace them when they arrive.
+  if (cached(`views-${slug}`) !== null) show(viewsEl, cached(`views-${slug}`), "read", "reads");
+  if (likesEl && cached(`likes-${slug}`) !== null) likesEl.textContent = cached(`likes-${slug}`);
+
   const seenKey = `seen-${slug}`;
   const views = remember(seenKey)
     ? await fetchCount("get", `views-${slug}`)
     : await fetchCount("hit", `views-${slug}`);
-  if (views !== null) store(seenKey, "1");
+  if (lastFetchOk) store(seenKey, "1"); // only when the visit was really counted
   show(viewsEl, views, "read", "reads");
 
   const likedKey = `liked-${slug}`;
@@ -61,6 +77,9 @@ async function setupStory(slug) {
 async function setupCards() {
   for (const card of document.querySelectorAll("[data-slug]")) {
     const slug = card.dataset.slug;
+    const cv = cached(`views-${slug}`), cl = cached(`likes-${slug}`);
+    if (cv !== null) show(card.querySelector("[data-views]"), cv, "read", "reads");
+    if (cl !== null && card.querySelector("[data-likes]")) card.querySelector("[data-likes]").textContent = cl;
     const [views, likes] = await Promise.all([
       fetchCount("get", `views-${slug}`),
       fetchCount("get", `likes-${slug}`),
