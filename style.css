@@ -201,6 +201,29 @@ article .byline {
 article .body { margin-top: 26px; }
 article .body p { margin: 0 0 1.2em; }
 article.poem .body p { white-space: pre-line; }
+article .body h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 28px;
+  color: var(--purple);
+  margin: 1.6em 0 0.6em;
+}
+article .body hr {
+  border: 0;
+  border-top: 3px dashed var(--line);
+  width: 40%;
+  margin: 2em auto;
+}
+article .body blockquote {
+  margin: 1.2em auto;
+  max-width: 420px;
+  padding: 16px 20px;
+  border: 3px solid var(--orange);
+  border-radius: 16px;
+  background: #fffaf0;
+  text-align: center;
+  font-weight: 700;
+}
+article .body blockquote p { margin: 0; }
 article .body img {
   width: 100%;
   border-radius: 16px;
