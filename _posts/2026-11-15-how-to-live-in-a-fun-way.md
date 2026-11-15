@@ -4,7 +4,7 @@ title: How to Live in a Fun Way
 kind: Story
 counter: how-to-live-in-a-fun-way
 pictures: made with Gemini
-cover: /images/how-to-live-in-a-fun-way/5.jpg
+cover: /images/how-to-live-in-a-fun-way/cover.jpg
 excerpt_text: Jose can't go to his best friend's birthday party, so he makes a secret plan. Then he finds out why the board looks so blurry.
 notebook:
   - /images/how-to-live-in-a-fun-way/page00.jpg
@@ -32,6 +32,8 @@ notebook:
   - /images/how-to-live-in-a-fun-way/page22.jpg
   - /images/how-to-live-in-a-fun-way/page23.jpg
 ---
+
+![How to Live in a Fun Way](/images/how-to-live-in-a-fun-way/title.jpg)
 
 ## Birthday
 
