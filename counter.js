@@ -1,7 +1,7 @@
-// Views and likes, stored on a free public counter (abacus.jasoncameron.dev).
+// Views and likes, stored on our own counter (a Cloudflare Worker, source in worker/).
 // Each browser counts once per story for views, and can like once.
 
-const COUNTER = "https://abacus.jasoncameron.dev";
+const COUNTER = "https://counter.shakingspeare.workers.dev";
 // Local previews use a separate namespace so they do not add to the real numbers.
 const NS = location.hostname.endsWith("github.io") ? "shakingspeare" : "shakingspeare-dev";
 

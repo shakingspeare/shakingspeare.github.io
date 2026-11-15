@@ -26,5 +26,6 @@ Use `kind: Poem`. Line breaks inside a stanza are kept, and an empty line starts
 
 ## Views and likes
 
-`counter.js` stores the numbers on a free public counter service.
+`counter.js` stores the numbers on our own counter at `counter.shakingspeare.workers.dev`
+(a Cloudflare Worker with a D1 database; the code is in `worker/counter-worker.js`).
 Each story uses its `counter` id, so **never change `counter` after a story is posted**, or its numbers start over at zero.
