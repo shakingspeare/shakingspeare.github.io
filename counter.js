@@ -40,37 +40,40 @@ function show(el, n, one, many) {
   el.textContent = n === null ? "…" : `${n} ${n === 1 ? one : many}`;
 }
 
-// On a story page: count this visit, show views, wire up the like button.
+// On a story page: count this visit, show views, wire up the like buttons.
+// The views and Like row can appear more than once (top and bottom); all copies stay in sync.
 async function setupStory(slug) {
-  const viewsEl = document.querySelector("[data-views]");
-  const btn = document.querySelector(".like-btn");
-  const likesEl = btn && btn.querySelector(".count");
+  const viewEls = document.querySelectorAll("article [data-views]");
+  const btns = document.querySelectorAll(".like-btn");
+  const setViews = (n) => viewEls.forEach((el) => show(el, n, "read", "reads"));
+  const setLikes = (n) => btns.forEach((b) => {
+    const c = b.querySelector(".count");
+    if (c) c.textContent = n === null ? "…" : n;
+  });
 
   // Show the saved numbers right away; the fresh ones replace them when they arrive.
-  if (cached(`views-${slug}`) !== null) show(viewsEl, cached(`views-${slug}`), "read", "reads");
-  if (likesEl && cached(`likes-${slug}`) !== null) likesEl.textContent = cached(`likes-${slug}`);
+  if (cached(`views-${slug}`) !== null) setViews(cached(`views-${slug}`));
+  if (cached(`likes-${slug}`) !== null) setLikes(cached(`likes-${slug}`));
+
+  const likedKey = `liked-${slug}`;
+  if (remember(likedKey)) btns.forEach((b) => b.classList.add("liked"));
+  btns.forEach((btn) => btn.addEventListener("click", async () => {
+    if (btn.classList.contains("liked")) return;
+    btns.forEach((b) => b.classList.add("liked"));
+    btn.classList.add("pop");
+    store(likedKey, "1");
+    const n = await fetchCount("hit", `likes-${slug}`);
+    if (n !== null) setLikes(n);
+  }));
 
   const seenKey = `seen-${slug}`;
   const views = remember(seenKey)
     ? await fetchCount("get", `views-${slug}`)
     : await fetchCount("hit", `views-${slug}`);
   if (lastFetchOk) store(seenKey, "1"); // only when the visit was really counted
-  show(viewsEl, views, "read", "reads");
+  setViews(views);
 
-  const likedKey = `liked-${slug}`;
-  const likes = await fetchCount("get", `likes-${slug}`);
-  if (likesEl) likesEl.textContent = likes === null ? "…" : likes;
-  if (!btn) return;
-
-  if (remember(likedKey)) btn.classList.add("liked");
-
-  btn.addEventListener("click", async () => {
-    if (btn.classList.contains("liked")) return;
-    btn.classList.add("liked", "pop");
-    store(likedKey, "1");
-    const n = await fetchCount("hit", `likes-${slug}`);
-    if (n !== null && likesEl) likesEl.textContent = n;
-  });
+  setLikes(await fetchCount("get", `likes-${slug}`));
 }
 
 // On the home page: fill in views and likes under each card.

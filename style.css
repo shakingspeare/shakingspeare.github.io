@@ -298,6 +298,7 @@ article figure img {
   background: var(--bg);
   border-radius: 18px;
 }
+.reactions.bottom { margin-top: 34px; }
 .views { color: var(--muted); font-size: 16px; }
 
 .like-btn {
