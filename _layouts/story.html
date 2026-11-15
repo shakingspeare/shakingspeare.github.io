@@ -10,6 +10,11 @@ layout: default
     · {{ page.date | date: "%B %-d, %Y" }}
   </div>
 
+  <div class="reactions">
+    <span class="views">👀 <span data-views>…</span></span>
+    <button class="like-btn" type="button"><span class="heart">❤️</span> Like <span class="count">…</span></button>
+  </div>
+
   {% if parts[1] %}
   <div class="lang-switch" role="group" aria-label="Language">
     <button type="button" data-set-lang="en" class="on">English (original)</button>
@@ -56,10 +61,6 @@ layout: default
   </section>
   {% endif %}
 
-  <div class="reactions">
-    <span class="views">👀 <span data-views>…</span></span>
-    <button class="like-btn" type="button"><span class="heart">❤️</span> Like <span class="count">…</span></button>
-  </div>
 </article>
 
 <a class="back" href="{{ '/' | relative_url }}">← All stories</a>
