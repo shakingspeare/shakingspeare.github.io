@@ -74,7 +74,11 @@
       {{ content }}
     </main>
 
-    <footer class="site">© {{ site.time | date: "%Y" }} Shakingspeare · written in South Korea 🇰🇷</footer>
+    <footer class="site">
+      <p>© {{ site.time | date: "%Y" }} Shakingspeare · written in South Korea 🇰🇷</p>
+      <p class="rights">All stories and poems here are the author's own work. Please do not copy or repost them without permission.</p>
+      <p class="rights" lang="ko">이곳의 글은 모두 작가가 직접 쓴 창작물입니다. 허락 없이 복사하거나 다른 곳에 옮겨 싣지 말아 주세요.</p>
+    </footer>
   </div>
   <script src="{{ '/counter.js' | relative_url }}"></script>
   {% if page.layout == "story" %}<script>setupStory("{{ page.counter }}");</script>{% endif %}

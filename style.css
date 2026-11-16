@@ -369,3 +369,6 @@ article h1,
   font-family: "Sniglet", "Fredoka", sans-serif;
   font-weight: 400;
 }
+
+footer.site p { margin: 0; }
+footer.site .rights { margin-top: 6px; font-size: 0.85em; opacity: 0.8; }
