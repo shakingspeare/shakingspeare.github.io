@@ -5,10 +5,12 @@ permalink: /about/
 ---
 <article class="about">
   <span class="tag">About</span>
-  <h1>Hi, I'm Erin Shakingspeare 🪶</h1>
+  <h1>Hi, I'm Erin Rowling 🪶</h1>
   <div class="body" markdown="1">
 
 I'm a young writer from **South Korea** 🇰🇷 who dreams of becoming an author like **J.K. Rowling** one day.
+
+**Erin Rowling** is my pen name. I borrowed the last name from my favorite author, because her books made me want to write.
 
 I love writing more than almost anything. I write about all kinds of things, whatever pops into my head. Most of my stories start in my notebook first, so you'll find the handwritten pages at the bottom of each one.
 

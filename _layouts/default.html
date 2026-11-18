@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="uxJvErPBBTvLPdySpRgqrZgCy8L8wDrhAvjz6hLMiO4" />
-  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · Stories and poems by Erin Shakingspeare{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · Stories and poems by Erin Rowling{% endif %}</title>
   <meta name="description" content="{{ page.excerpt_text | default: site.description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
         "@type": "WebSite",
         "@id": "{{ site.url }}/#website",
         "name": {{ site.title | jsonify }},
-        "alternateName": ["Erin Shakingspeare's", "Erin Shakingspeare", "Erin Shakingspeare stories", "Shakingspeare's Story Shelf", "Story Shelf", "Shakingspeare", "Erin Shakespeare's Story Shelf"],
+        "alternateName": ["Erin Rowling's", "Erin Rowling", "Erin Rowling stories", "Story Shelf", "Erin Shakingspeare's Story Shelf"],
         "url": "{{ site.url }}/",
         "description": {{ site.description | jsonify }},
         "inLanguage": "en",
@@ -34,9 +34,9 @@
       {
         "@type": "Person",
         "@id": "{{ site.url }}/#author",
-        "name": "Erin Shakingspeare",
-        "alternateName": ["Shakingspeare"],
-        "description": "A young writer from South Korea who writes stories and poems. Erin Shakingspeare is a pen name, not a misspelling of Shakespeare.",
+        "name": "Erin Rowling",
+        "alternateName": ["Erin Shakingspeare"],
+        "description": "A young writer from South Korea who writes stories and poems. Erin Rowling is a pen name, in honor of her favorite writer, J.K. Rowling.",
         "url": "{{ site.url }}/about/",
         "nationality": { "@type": "Country", "name": "South Korea" }
       }{% if page.layout == "story" %},
@@ -76,8 +76,8 @@
     </main>
 
     <footer class="site">
-      <p>© {{ site.time | date: "%Y" }} Erin Shakingspeare · written in South Korea 🇰🇷</p>
-      <p class="rights">Shakingspeare is a pen name, a playful twist on Shakespeare.</p>
+      <p>© {{ site.time | date: "%Y" }} Erin Rowling · written in South Korea 🇰🇷</p>
+      <p class="rights">Erin Rowling is a pen name, in honor of the author's favorite writer, J.K. Rowling.</p>
       <p class="rights">All stories and poems here are the author's own work. Please do not copy or repost them without permission.</p>
       <p class="rights" lang="ko">이곳의 글은 모두 작가가 직접 쓴 창작물입니다. 허락 없이 복사하거나 다른 곳에 옮겨 싣지 말아 주세요.</p>
     </footer>
