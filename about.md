@@ -5,7 +5,7 @@ permalink: /about/
 ---
 <article class="about">
   <span class="tag">About</span>
-  <h1>Hi, I'm Shakingspeare 🪶</h1>
+  <h1>Hi, I'm Erin Shakingspeare 🪶</h1>
   <div class="body" markdown="1">
 
 I'm a young writer from **South Korea** 🇰🇷 who dreams of becoming an author like **J.K. Rowling** one day.
