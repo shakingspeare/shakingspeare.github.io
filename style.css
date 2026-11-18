@@ -46,8 +46,9 @@ header.site {
 header.site a.name {
   font-family: "Sniglet", "Fredoka", sans-serif;
   font-weight: 400;
-  font-size: clamp(40px, 9vw, 64px);
+  font-size: clamp(18px, 5.2vw, 42px);
   line-height: 1.1;
+  white-space: nowrap;
   text-decoration: none;
   color: var(--text);
   display: inline-block;

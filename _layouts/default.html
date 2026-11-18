@@ -15,7 +15,7 @@
   <meta property="og:description" content="{{ page.excerpt_text | default: site.description }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=20261118">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,7 +24,7 @@
         "@type": "WebSite",
         "@id": "{{ site.url }}/#website",
         "name": {{ site.title | jsonify }},
-        "alternateName": ["Erin Shakingspeare's", "Erin Shakingspeare", "Erin Shakingspeare stories", "Shakingspeare's Story Box", "Story Box", "Shakingspeare's Story Shelf", "Shakingspeare"],
+        "alternateName": ["Erin Shakingspeare's", "Erin Shakingspeare", "Erin Shakingspeare stories", "Shakingspeare's Story Shelf", "Story Shelf", "Shakingspeare", "Erin Shakespeare's Story Shelf"],
         "url": "{{ site.url }}/",
         "description": {{ site.description | jsonify }},
         "inLanguage": "en",
@@ -77,6 +77,7 @@
 
     <footer class="site">
       <p>© {{ site.time | date: "%Y" }} Erin Shakingspeare · written in South Korea 🇰🇷</p>
+      <p class="rights">Shakingspeare is a pen name, a playful twist on Shakespeare.</p>
       <p class="rights">All stories and poems here are the author's own work. Please do not copy or repost them without permission.</p>
       <p class="rights" lang="ko">이곳의 글은 모두 작가가 직접 쓴 창작물입니다. 허락 없이 복사하거나 다른 곳에 옮겨 싣지 말아 주세요.</p>
     </footer>
